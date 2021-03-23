@@ -43,3 +43,7 @@ def logoutUser(request):
     logout(request)
     
     return redirect('acces')
+
+
+def handler404(request, exception):
+    return render(request, 'base/404.html')

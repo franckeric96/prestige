@@ -24,14 +24,20 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'm*7fg%+6fem=x9a5ba(nhai)98by!yj5_onf47z5)4jn9cpj6@'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['prestige.com', 'localhost', '127.0.0.1']
 
 
 # Application definition
 
 INSTALLED_APPS = [
+
+#django admin interface
+    'admin_interface',
+
+    'colorfield',
+
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -126,6 +132,10 @@ MEDIA_URL = '/media/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR,'static')
 ]
-STATIC_ROOT= os.path.join(BASE_DIR, '/static_cdn')
-MEDIA_ROOT= os.path.join(BASE_DIR, '/media_cdn')
+STATIC_ROOT= os.path.join(BASE_DIR, 'static_cdn')
+MEDIA_ROOT= os.path.join(BASE_DIR, 'media_cdn')
 
+
+
+#configuration djanngo admin interface 
+X_FRAME_OPTIONS='SAMEORIGIN' # only if django version >= 3.0
